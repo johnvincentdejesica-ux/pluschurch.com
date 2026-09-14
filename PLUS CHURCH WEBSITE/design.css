@@ -1,0 +1,330 @@
+:root{
+  --navy-950:#0B1D33;
+  --navy-800:#14335A;
+  --navy-700:#1B3F6B;
+  --navy-600:#2C5480;
+  --sky-400:#7FA8C9;
+  --sky-200:#C7DCEA;
+  --paper:#F5F2EA;
+  --paper-dim:#EAE6DA;
+  --gold-500:#B98A3D;
+  --gold-600:#9C7230;
+  --ink:#122238;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.55;
+}
+img{
+    display:block;
+    max-width:100%;
+    width:100%;object-fit:cover;
+}
+a{
+    color:inherit;
+}
+h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+}
+p{
+    margin:0;
+}
+.wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+    margin-bottom:40px;
+}
+:focus-visible{
+    outline:2px solid var(--gold-500);
+    outline-offset:3px;
+}
+
+/* Navigation */
+header.site-nav{
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:20;
+  padding:24px 0;
+}
+.nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+.brand{
+    font-family:var(--serif);
+    font-size:1.1rem;color:var(--paper);
+    display:flex;align-items:center;gap:10px;
+    text-decoration:none;
+}
+.brand-mark{
+    width:20px;
+    height:20px;
+    flex:none;
+}
+nav.links{
+    display:flex;
+    gap:26px;
+    font-size:0.92rem;
+}
+nav.links a{
+    color:var(--sky-200);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease,color .2s ease;
+}
+nav.links a:hover{
+    color:var(--paper);
+    border-color:var(--gold-500);
+}
+
+/* hero */
+.hero{position:relative;
+    height:72svh;
+    min-height:460px;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    color:var(--paper);
+}
+.hero-photo{position:absolute;
+    inset:0;height:100%;
+    object-fit:cover;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(190deg, rgba(11,29,51,0.55) 0%, rgba(11,29,51,0.88) 75%, #0B1D33 100%);
+}
+.hero-content{
+    position:relative;
+    z-index:2;padding-bottom:56px;
+}
+.hero h1{
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    line-height:1.08;
+    max-width:15ch;
+}
+.hero-sub{
+    margin-top:18px
+    ;max-width:44ch;
+    font-size:1.05rem;
+    color:var(--sky-200);
+}
+.hero-times{
+    margin-top:28px;
+    display:flex;gap:28px;
+    flex-wrap:wrap;
+    font-size:0.95rem;
+    color:var(--sky-200);
+}
+.hero-times span{
+    border-top:1px solid rgba(199,220,234,0.35);
+    padding-top:10px;
+}
+
+/* about */
+.about{
+    padding:88px 0;
+}
+.about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;align-items:center;
+}
+.about-grid img{
+    border-radius:4px;
+    aspect-ratio:4/3;
+}
+.eyebrow{
+    font-family:var(--serif);
+    font-style:italic;
+    color:var(--navy-600);
+    font-size:1.05rem;
+    margin-bottom:16px;
+}
+.quote{
+    font-family:var(--serif);
+    font-size:clamp(1.35rem,2.2vw,1.75rem);
+    line-height:1.4;
+    color:var(--navy-950);
+}
+.quote-sub{
+    margin-top:20px;
+    color:var(--navy-600);
+    font-size:0.98rem;
+}
+
+/* photostrip */
+.photo-strip{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+}
+.photo-strip img{aspect-ratio:1/1;}
+
+/* schedule */
+.schedule{
+    background:var(--navy-950);
+    color:var(--paper);padding:72px 0;
+}
+.schedule h2{
+    font-size:clamp(1.6rem,2.6vw,2rem);
+    margin-bottom:36px;
+}
+.schedule-list{
+    border-top:1px solid rgba(199,220,234,0.2);
+}
+.schedule-row{
+    display:grid;
+    grid-template-columns:120px 1fr auto;
+    gap:20px;align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid rgba(199,220,234,0.2);
+}
+.schedule-row .time{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--gold-500);
+}
+.schedule-row .what{
+    font-size:1rem;
+}
+.schedule-row .where{
+    font-size:0.85rem;
+    color:var(--sky-400);
+}
+
+/* Ministries */
+.ministries{
+    padding:88px 0;
+}
+.ministries h2{
+    font-size:clamp(1.6rem,2.6vw,2rem);
+    color:var(--navy-950);
+    margin-bottom:40px;
+}
+.ministry-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+}
+.ministry-card img{
+    aspect-ratio:4/3;
+    border-radius:4px;
+    margin-bottom:18px;
+}
+.ministry-card h3{
+    font-size:1.2rem;
+    color:var(--navy-950);
+    margin-bottom:8px;
+}
+.ministry-card p{
+    font-size:0.92rem;
+    color:var(--navy-600);
+}
+
+/* Give */
+.give{
+    padding:80px 0;
+}
+.give-inner{
+    background:var(--navy-950);
+    color:var(--paper);
+    border-radius:4px;
+    padding:56px;
+    text-align:center;
+}
+.give h2{
+    font-size:clamp(1.6rem,2.6vw,2rem);
+}
+.give p{
+    margin:18px auto 0;
+    max-width:46ch;
+    color:var(--sky-200);
+}
+.give-btn{
+  display:inline-block;
+  margin-top:26px;
+  background:var(--gold-500);
+  color:var(--navy-950);
+  padding:13px 26px;
+  border-radius:2px;
+  text-decoration:none;
+  font-size:0.95rem;
+  font-weight:500;
+  transition:background .2s ease;
+}
+.give-btn:hover{
+    background:var(--gold-600);
+}
+
+/* Contact */
+.contact{
+    padding:88px 0 60px;
+}
+.contact h2{
+    font-size:clamp(1.6rem,2.6vw,2rem);
+    color:var(--navy-950);
+    margin-bottom:32px;
+}
+.contact-links{display:flex;
+    flex-direction:column;
+}
+.contact-links a{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  flex-wrap:wrap;gap:6px;
+  padding:20px 0;
+  border-top:1px solid var(--paper-dim);
+  text-decoration:none;
+}
+.contact-links a:last-child{
+    border-bottom:1px solid var(--paper-dim);
+}
+.contact-links .k{
+    font-size:0.85rem;color:var(--navy-600);
+}
+.contact-links .v{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--navy-950);
+    transition:color .2s ease;
+}
+.contact-links a:hover .v{
+    color:var(--gold-600);
+}
+
+footer{
+  border-top:1px solid var(--paper-dim);
+  margin-top:40px;
+  padding:30px 24px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  font-size:0.84rem;
+  color:var(--navy-600);
+  
+}
+
+@media (max-width:820px){
+  .about-grid{grid-template-columns:1fr;}
+  .ministry-grid{grid-template-columns:1fr;}
+  nav.links{display:none;}
+  .give-inner{padding:40px 26px;}
+}
